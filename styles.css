@@ -612,12 +612,31 @@
     }
   }
   
-  /* Ensure particles work with locomotive scroll */
-  #particles-hero,
-  #particles-projects {
-    position: absolute !important;
-    z-index: 0;
-  }
+/* Line Waves background */
+#line-waves-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#line-waves-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Ensure particles work with locomotive scroll */
+#particles-projects {
+  position: absolute !important;
+  z-index: 0;
+}
   
   /* Custom Cursor */
   * {
@@ -701,8 +720,8 @@ html {
 }
 
 /* Optimize particle animations */
-#particles-hero,
-#particles-projects {
+#particles-projects,
+#line-waves-container {
   contain: layout style paint;
   will-change: transform;
 }
