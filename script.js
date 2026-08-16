@@ -562,30 +562,13 @@ gsap.from(".project-card", {
     });
   });
 
-  // Animated Download Button Functionality
+  // Download Button Functionality
   document.addEventListener('DOMContentLoaded', function() {
-    const downloadInput = document.querySelector('.download-label .download-input');
     const downloadLink = document.querySelector('a[download]');
     
-    if (downloadInput && downloadLink) {
-      downloadInput.addEventListener('change', function() {
-        if (this.checked) {
-          // Trigger the download after animation starts
-          setTimeout(() => {
-            // Create a temporary link to trigger download
-            const tempLink = document.createElement('a');
-            tempLink.href = downloadLink.href;
-            tempLink.download = downloadLink.download || 'resume.pdf';
-            document.body.appendChild(tempLink);
-            tempLink.click();
-            document.body.removeChild(tempLink);
-            
-            // Reset the checkbox after animation completes
-            setTimeout(() => {
-              this.checked = false;
-            }, 4000); // Reset after animation completes
-          }, 500); // Small delay to let animation start
-        }
+    if (downloadLink) {
+      downloadLink.addEventListener('click', function(e) {
+        // Let the default download behavior happen
       });
     }
   });
